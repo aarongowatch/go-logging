@@ -85,6 +85,10 @@ func SimpleLogger(name string) (*Logger, error) {
 	return createLogger(name, WARNING, BasicFormat, DefaultTimeFormat, os.Stdout, false)
 }
 
+func SimpleLevelLogger(name string, level Level) (*Logger, error) {
+  return createLogger(name, level, BasicFormat, DefaultTimeFormat, os.Stdout, false)
+}
+
 // BasicLogger creates a new logger with basic configuration.
 func BasicLogger(name string) (*Logger, error) {
 	return FileLogger(name, WARNING, BasicFormat, DefaultTimeFormat, DefaultFileName, false)
